@@ -4,7 +4,7 @@ task :add_teams_and_games => [ :environment ] do
   team_names = ["Sverige", "England", "Österrike", "Spanien", "Finland", "Portugal", "Schweiz", "Belgien", "Island", "Norge", "Nordirland", "Tyskland", "Danmark", "Nederländerna", "Frankrike", "Italien"]
 
   team_names.each do |team_name|
-    Team.create!(name: team_name, image_badge_url: "/#{team_name.downcase}.png")
+    Team.create!(name: team_name, image_badge_url: "#{team_name.downcase}.png")
   end
 
   games = [
