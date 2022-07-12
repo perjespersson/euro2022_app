@@ -3,7 +3,8 @@ class OnepagesController < ApplicationController
   # GET /onepages/1 or /onepages/1.json
   def show
     @games = Game.all.order(date: :asc)
-    @latest_game = Game.where.not(home_team_score: nil, away_team_score: nil).last
+    @played_games = Game.where.not(home_team_score: nil, away_team_score: nil).offset(5)
+    @latest_game = @played_games.last
     @next_game = Game.where(home_team_score: nil, away_team_score: nil).first
     @result = ActiveRecord::Base.connection.execute(result_query)
   end

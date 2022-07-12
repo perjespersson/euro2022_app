@@ -4,8 +4,8 @@
       <tr>
         <th scope="col"></th>
         <th scope="col">Namn</th>
-        <th scope="col">Träffsäkerhet</th>
-        <th scope="col">Poäng</th>
+        <th scope="col" style="text-align: center;">Träffsäkerhet</th>
+        <th scope="col" style="text-align: center;">Poäng</th>
       </tr>
     </thead>
     <tbody>
@@ -13,8 +13,8 @@
       <tr>
         <th scope="row" style="text-align: center;"><%= index + 1 %></th>
         <td><%= user["name"] %></td>
-        <td><%= user["points"] %>/<%= @games.count %></td>
-        <td><%= user["points"] %></td>
+        <td style="text-align: center;"><%= user["points"] %>/<%= @played_games.count %></td>
+        <td style="text-align: center;"><%= user["points"] %></td>
       </tr>
       <% end %>
     </tbody>

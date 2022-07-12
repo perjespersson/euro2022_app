@@ -14,9 +14,8 @@
         <% if game.home_team_score.present? && game.away_team_score.present? %>
           <%= game.home_team_score %> - <%= game.away_team_score %>
         <% else %>
-          <%= game.date.strftime("%d/%m") %>
-          <br>
-          <%= game.date.strftime("%H:%M") %>
+          <p style="margin: 0; padding: 0; font-size: 14px;"><%= game.date.strftime("%d/%m") %></p>
+          <p style="margin: 0; padding: 0; font-size: 14px;"><%= game.date.strftime("%H:%M") %></p>
         <% end %>
       </div>
 
