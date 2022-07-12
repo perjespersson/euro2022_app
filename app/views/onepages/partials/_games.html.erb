@@ -1,0 +1,32 @@
+<div style="background-color: white; border-radius: 20px;">
+  <% @games.each do |game| %>
+    <div class="d-flex" style="height: 90px;">
+
+      <div class="align-self-center" style="width: calc(50% - 120px); text-align: right;">
+        <p style="margin: 0; padding: 0;"><%= game.home_team.name %></p>
+      </div>
+
+      <div class="align-self-center" style="width: 90px">
+        <%= image_tag(game.home_team.image_badge_url, style: 'width: 40px; display:block; margin: 0 auto;')  %>
+      </div>
+
+      <div class="align-self-center" style="width: 60px; text-align: center;">
+        <% if game.home_team_score.present? && game.away_team_score.present? %>
+          <%= game.home_team_score %> - <%= game.away_team_score %>
+        <% else %>
+          <%= game.date.strftime("%d/%m") %>
+          <br>
+          <%= game.date.strftime("%H:%M") %>
+        <% end %>
+      </div>
+
+      <div class="align-self-center" style="width: 90px;">
+        <%= image_tag(game.away_team.image_badge_url, style: 'width: 40px; display:block; margin: 0 auto;')  %>
+      </div>
+
+      <div class="align-self-center" style="width: calc(50% - 120px); text-align: left;">
+        <p style="margin: 0; padding: 0;"><%= game.away_team.name %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

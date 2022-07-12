@@ -1,0 +1,22 @@
+<div style="background-color: white; border-radius: 20px;">
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Namn</th>
+        <th scope="col">Träffsäkerhet</th>
+        <th scope="col">Poäng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @result.each_with_index do |user, index| %>
+      <tr>
+        <th scope="row" style="text-align: center;"><%= index + 1 %></th>
+        <td><%= user["name"] %></td>
+        <td><%= user["points"] %>/<%= @games.count %></td>
+        <td><%= user["points"] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
