@@ -2,7 +2,7 @@ class OnepagesController < ApplicationController
 
   def show
     @games = Game.all.order(date: :asc)
-    @played_games = Game.where.not(home_team_score: nil, away_team_score: nil).offset(5)
+    @played_games = Game.where.not(home_team_score: nil, away_team_score: nil).offset(5).order(date: :asc)
     @latest_game = @played_games.last
     @next_game = Game.where(home_team_score: nil, away_team_score: nil).first
     @result = ActiveRecord::Base.connection.execute(result_query)
