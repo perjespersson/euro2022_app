@@ -1,6 +1,5 @@
 class OnepagesController < ApplicationController
 
-  # GET /onepages/1 or /onepages/1.json
   def show
     @games = Game.all.order(date: :asc)
     @played_games = Game.where.not(home_team_score: nil, away_team_score: nil).offset(5)
@@ -11,6 +10,7 @@ class OnepagesController < ApplicationController
 
   private
 
+  # Query for fetching the results in to a table
   def result_query
     <<~QUERY
       WITH result AS (
