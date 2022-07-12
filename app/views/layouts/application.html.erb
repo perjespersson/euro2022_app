@@ -95,6 +95,24 @@
         border-radius: 0px;
         background-color: transparent;
       }
+
+      .responsive{
+        display: none;
+      }
+
+      .not-responsive{
+        display: block;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .responsive{
+          display: block;
+        }
+
+        .not-responsive{
+          display: none;
+        }
+      }
     </style>
   </head>
 

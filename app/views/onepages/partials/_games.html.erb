@@ -8,11 +8,12 @@
 
     <div class="d-flex" style="height: 90px; padding-bottom: 15px;">
       <div class="align-self-center" style="width: calc(50% - 120px); text-align: right;">
-        <p style="margin: 0; padding: 0;"><%= game.home_team.name %></p>
+        <p class="not-responsive" style="margin: 0; padding: 0;"><%= game.home_team.name %></p>
       </div>
 
       <div class="align-self-center" style="width: 90px">
         <%= image_tag(game.home_team.image_badge_url, style: 'width: 40px; display:block; margin: 0 auto;')  %>
+        <p class="responsive" style="margin: 0; padding: 0; margin-top: 10px; text-align: center;"><%= game.home_team.name %></p>
       </div>
 
       <div class="align-self-center" style="width: 60px; text-align: center;">
@@ -26,10 +27,11 @@
 
       <div class="align-self-center" style="width: 90px;">
         <%= image_tag(game.away_team.image_badge_url, style: 'width: 40px; display:block; margin: 0 auto;')  %>
+        <p class="responsive" style="margin: 0; padding: 0; margin-top: 10px; text-align: center;"><%= game.away_team.name %></p>
       </div>
 
       <div class="align-self-center" style="width: calc(50% - 120px); text-align: left;">
-        <p style="margin: 0; padding: 0;"><%= game.away_team.name %></p>
+        <p class="not-responsive" style="margin: 0; padding: 0;"><%= game.away_team.name %></p>
       </div>
     </div>
   <% end %>
