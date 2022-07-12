@@ -13,7 +13,7 @@
       <tr>
         <th scope="row" style="text-align: center;"><%= index + 1 %></th>
         <td><%= user["name"] %></td>
-        <td style="text-align: center;"><%= (user["points"].to_f / @played_games.count) * 100  %>%</td>
+        <td style="text-align: center;"><%= ((user["points"].to_f / @played_games.count) * 100).round  %> %</td>
         <td style="text-align: center;"><%= user["points"] %></td>
       </tr>
       <% end %>
