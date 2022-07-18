@@ -36,26 +36,30 @@
 
       <div class="d-flex" style="vertical-align: center; height: 90px;">
 
-        <div class="align-self-center" style="width: calc(50% - 120px); text-align: right;">
-          <p style="margin: 0; padding: 0;"><%= @next_game.home_team.name %></p>
-        </div>
+        <% if @next_game.present? %>
+          <div class="align-self-center" style="width: calc(50% - 120px); text-align: right;">
+            <p style="margin: 0; padding: 0;"><%= @next_game.home_team.name %></p>
+          </div>
 
-        <div class="align-self-center" style="width: 90px">
-          <%= image_tag(@next_game.home_team.image_badge_url, style: 'width: 40px; display:block; margin: 0 auto;')  %>
-        </div>
+          <div class="align-self-center" style="width: 90px">
+            <%= image_tag(@next_game.home_team.image_badge_url, style: 'width: 40px; display:block; margin: 0 auto;')  %>
+          </div>
 
-        <div class="align-self-center" style="width: 60px; text-align: center;">
-          <p style="margin: 0; padding: 0; font-size: 14px;"><%= @next_game.date.strftime("%d/%m") %></p>
-          <p style="margin: 0; padding: 0; font-size: 14px;"><%= @next_game.date.strftime("%H:%M") %></p>
-        </div>
+          <div class="align-self-center" style="width: 60px; text-align: center;">
+            <p style="margin: 0; padding: 0; font-size: 14px;"><%= @next_game.date.strftime("%d/%m") %></p>
+            <p style="margin: 0; padding: 0; font-size: 14px;"><%= @next_game.date.strftime("%H:%M") %></p>
+          </div>
 
-        <div class="align-self-center" style="width: 90px;">
-          <%= image_tag(@next_game.away_team.image_badge_url, style: 'width: 40px; display:block; margin: 0 auto;')  %>
-        </div>
+          <div class="align-self-center" style="width: 90px;">
+            <%= image_tag(@next_game.away_team.image_badge_url, style: 'width: 40px; display:block; margin: 0 auto;')  %>
+          </div>
 
-        <div class="align-self-center" style="width: calc(50% - 120px); text-align: left;">
-          <p style="margin: 0; padding: 0;"><%= @next_game.away_team.name %></p>
-        </div>
+          <div class="align-self-center" style="width: calc(50% - 120px); text-align: left;">
+            <p style="margin: 0; padding: 0;"><%= @next_game.away_team.name %></p>
+          </div>
+        <% else %>
+          <h2>Alla matcher är slut :) </h2>
+        <% end %>
       </div>
     </div>
   </div>
